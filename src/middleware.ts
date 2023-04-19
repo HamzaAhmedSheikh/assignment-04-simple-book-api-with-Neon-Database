@@ -16,11 +16,11 @@ export default async function middleware(request: NextRequest) {
     }
 
     // api call to fetch user data from database
-    const decodedUser = await verifyAuth(authToken, host);
+    const getUser = await verifyAuth(authToken, host);
 
     // passing the data by headers
     const headers = new Headers(request.headers);
-    headers.set("userId", JSON.stringify(decodedUser.id));
+    headers.set("userId", JSON.stringify(getUser.id));
 
     return NextResponse.next({ headers });
   } catch (error: any) {
