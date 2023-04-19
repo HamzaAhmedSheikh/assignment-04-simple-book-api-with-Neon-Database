@@ -1,4 +1,4 @@
-import { pgInstance } from "../route";
+import { pgInstance } from "@/db/db_instance";
 import { NextRequest, NextResponse } from "next/server";
 
 type Params = {

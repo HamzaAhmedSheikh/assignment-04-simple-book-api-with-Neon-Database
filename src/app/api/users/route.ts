@@ -1,4 +1,4 @@
-import { pgInstance } from "../books/route";
+import { pgInstance } from "@/db/db_instance";
 // This imports the verify function from the "jsonwebtoken" library, which is used to verify JSON Web Tokens (JWTs).
 import { verify } from "jsonwebtoken";
 import { NextRequest, NextResponse } from "next/server";

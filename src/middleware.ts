@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
-import { verifyAuth } from "./lib/auth";
+import  verifyAuth  from "./auth/auth";
 
-export async function middleware(request: NextRequest) {
+export default async function middleware(request: NextRequest) {
   try {
     const authToken = request.headers.get("authorization")?.split(" ")[1];
     const host = request.headers.get("host")!;

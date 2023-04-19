@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import jwt from "jsonwebtoken";
-import { pgInstance } from "../books/route";
+import { pgInstance } from "@/db/db_instance";
 
 interface IBody {
   clientName: string;
@@ -52,7 +52,6 @@ export async function POST(request: NextRequest) {
       }
     );
   } catch (error: any) {
-    console.log(error);
 
     return NextResponse.json(
       { error: "API client already registered." },

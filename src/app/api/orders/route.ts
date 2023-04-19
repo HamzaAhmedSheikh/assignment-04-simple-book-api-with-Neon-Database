@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { pgInstance } from "../books/route";
+import { pgInstance } from "@/db/db_instance";
 
 
 type Body = {
@@ -31,7 +31,7 @@ export async function POST(request: NextRequest, response: NextResponse) {
       status: 201,
     });
   } catch (error: any) {
-    console.log(error);
+    // console.log(error);
 
     return NextResponse.json(
       { error: error.message || "Somethineg went wrong" },

@@ -1,9 +1,9 @@
-import { pgInstance } from "../../books/route";
+import { pgInstance } from "@/db/db_instance";
 
 import { NextRequest, NextResponse } from "next/server";
 
 type Params = {
-  orderId?: string;
+  orderId: string;
 };
 
 export async function GET(
@@ -30,7 +30,7 @@ export async function GET(
       status: 200,
     });
   } catch (error: any) {
-    console.log(error);
+    // console.log(error);
 
     return NextResponse.json(
       { error: error.message || "Somethineg went wrong" },
@@ -80,7 +80,7 @@ export async function PATCH(
       status: 200,
     });
   } catch (error: any) {
-    console.log(error);
+    // console.log(error);
 
     return NextResponse.json(
       { error: error.message || "Somethineg went wrong" },
@@ -110,7 +110,7 @@ export async function DELETE(
       }
     );
   } catch (error: any) {
-    console.log(error);
+    // console.log(error);
 
     return NextResponse.json(
       { error: error.message || "Somethineg went wrong" },

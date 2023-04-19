@@ -3,7 +3,7 @@
  *  retrieves and parses the response as JSON to retrieve the decoded user data, and returns it as the result of the function
   *************** */
 
-export async function verifyAuth(token: string, host: string) {
+export default async function verifyAuth(token: string, host: string) {
     try {
       const response = await fetch(`http://${host}/api/users`, {
         method: "POST",
